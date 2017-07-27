@@ -38,8 +38,8 @@ INSERT INTO `customers` VALUES ('1', 'tester1', 'tester1@gmail.com', '2017-07-01
 INSERT INTO `customers` VALUES ('1', 'tester1', 'tester1@hotmail.com', '2017-07-01 00:00:00');
 ```
 
-쓰기 속성을 지닌 트랜잭션을 실행하면 (customerService.findOne 메소드) 이메일값은 **tester1@gmail.com** 이다.
-읽기 속성을 지닌 트랜잭션을 실행하면 (customerService.findOneWithReadOnly 메소드) 이메일값은 **tester1@hotmail.com** 이다.
+* 쓰기 속성을 지닌 트랜잭션을 실행하면 (customerService.findOne 메소드) 이메일값은 **tester1@gmail.com** 이다.
+* 읽기 속성을 지닌 트랜잭션을 실행하면 (customerService.findOneWithReadOnly 메소드) 이메일값은 **tester1@hotmail.com** 이다.
 
 @Transactional 어노테이션의 읽기전용 속성에 따라 Master, Slave 노드가 정확하게 선택되는 것을 확인할 수 있다.
 
