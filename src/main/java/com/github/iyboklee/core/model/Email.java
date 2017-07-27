@@ -7,8 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -27,7 +25,7 @@ public class Email {
     protected Email() {}
 
     public boolean verifyAddress() {
-        if (StringUtils.isEmpty(address))
+        if (address != null)
             return false;
         return Pattern.matches("[\\w\\~\\-\\.\\+]+@[\\w\\~\\-]+(\\.[\\w\\~\\-]+)+", address);
     }
